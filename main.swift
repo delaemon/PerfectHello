@@ -1,4 +1,5 @@
 import PerfectLib
+import SwiftyJSON
 
 PerfectServer.initializeServices()
 
@@ -6,8 +7,9 @@ let webRoot = "./webroot"
 try Dir(webRoot).create()
 
 Routing.Routes["/"] = {
+    let json = JSON("{'msg': 'Hello!!'}")
     request, response in
-    response.appendBody(string: "<html><title>Hello, swfit!</title><body>Hello, swift!</body></html>")
+    response.appendBody(string: json)
     response.completed()
 }
 
