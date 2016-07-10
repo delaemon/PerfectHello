@@ -3,7 +3,7 @@ import SwiftyJSON
 
 PerfectServer.initializeServices()
 
-let webRoot = "./webroot"
+let webRoot = "../webroot"
 try Dir(webRoot).create()
 
 Routing.Routes["/"] = {
